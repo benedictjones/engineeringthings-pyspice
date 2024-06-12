@@ -1,0 +1,25 @@
+name: etspice
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - fastparquet
+  - graphviz
+  - ipython
+  - jupyter
+  - matplotlib
+  - numpy
+  - pandas
+  - pyarrow
+  - python-dotenv
+  - python-graphviz
+  - python=3.10
+  - pyyaml
+  - s3fs
+  - scikit-learn
+  - scikit-survival
+  - seaborn
+  - tabulate
+  - pytest
+  - nbstripout
+  - pyspice
