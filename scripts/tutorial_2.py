@@ -7,6 +7,8 @@ import sys
 import matplotlib
 matplotlib.use('Agg')
 
+from utils.methods import format_analysis
+
 import PySpice
 import PySpice.Logging.Logging as Logging
 from PySpice.Spice.Netlist import Circuit
