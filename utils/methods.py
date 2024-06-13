@@ -1,7 +1,9 @@
 import numpy as np
+import os
 from typing import List, Dict, Optional
-import PySpice
 
+import PySpice
+from PySpice.Spice.Netlist import Circuit
 
 
 def format_analysis(
@@ -38,3 +40,23 @@ def format_analysis(
             res[node] = waveform
 
     return res
+
+
+def write_line_to_netlist(
+    circuit:Circuit,
+    new_line:str
+) -> Circuit:
+    """
+    Wite a string as a new line to a circuit's netlist.
+
+    Args:
+        cir (Circuit):
+            PySpice Circuit object.
+        new_line (str):
+            String to become the new line.
+
+    Returns:
+        Circuit: PySpice circuit object with added Raw SPICE line
+    """
+    circuit.raw_spice += new_line + os.linesep
+    return circuit
