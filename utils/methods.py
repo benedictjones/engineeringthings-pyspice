@@ -39,6 +39,15 @@ def format_analysis(
         else:
             res[node] = waveform
 
+    # Include time if it exists
+    if hasattr(analysis, 'time'):
+        res['time'] = analysis.time
+
+    # Include time if it exists
+    if hasattr(analysis, 'frequency'):
+        res['frequency'] = analysis.frequency
+
+
     return res
 
 
