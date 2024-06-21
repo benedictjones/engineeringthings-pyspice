@@ -1,6 +1,9 @@
 # EngineeringThings PySpice
 
-A small series of tutorials and examples using pyspice, delivered in the youtube series on my [EnginneringThings channel](https://www.youtube.com/channel/UCrDM7plhff2fMSIIycZmw_Q).
+A small series of tutorials and examples of [SPICE](https://en.wikipedia.org/wiki/SPICE) ("Simulation Program with Integrated Circuit Emphasis") implemented directly in Python using [PySpice](https://github.com/PySpice-org/PySpice), delivered in the youtube series on my [EnginneringThings channel](https://www.youtube.com/channel/UCrDM7plhff2fMSIIycZmw_Q).
+
+PySpice is a Python module which interface [Python](https://www.python.org/) to the [Ngspice](https://ngspice.sourceforge.io/) and [Xyce](https://xyce.sandia.gov/) circuit simulators.
+Documentation for PySpice is available on the [PySpice Home Page](https://pyspice.fabrice-salvaire.fr/pages/documentation.html).
 
 ## Structure
 
