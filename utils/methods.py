@@ -6,6 +6,18 @@ import PySpice
 from PySpice.Spice.Netlist import Circuit
 
 
+
+def cast_waveform(waveform) -> np.ndarray|float:
+    """
+    Function to cast PySpice wafe forms to a numpy array,
+    or a float (if only a single value).
+    """
+    if len(waveform) == 1:
+        return float(waveform[0])
+    else:
+        return np.array(waveform)
+
+
 def format_analysis(
     analysis,
     cast:bool=True,
@@ -29,24 +41,18 @@ def format_analysis(
         raise ValueError('Must pass a completed analysis')
 
     res = {}
-    for node, waveform in analysis.nodes.items():
-        if cast:
-            if len(waveform) == 1:
-                res[node] = float(waveform[0])
-            else:
-                res[node] = np.array(waveform)
 
-        else:
-            res[node] = waveform
+    # Include node voltagess
+    for node, waveform in analysis.nodes.items():
+        res[node] = cast_waveform(waveform) if cast else waveform
 
     # Include time if it exists
     if hasattr(analysis, 'time'):
-        res['time'] = analysis.time
+        res['time'] = cast_waveform(analysis.time) if cast else analysis.time
 
     # Include time if it exists
     if hasattr(analysis, 'frequency'):
-        res['frequency'] = analysis.frequency
-
+        res['frequency'] = cast_waveform(analysis.frequency) if cast else analysis.frequency
 
     return res
 
