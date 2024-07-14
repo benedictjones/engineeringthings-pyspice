@@ -75,3 +75,4 @@ def write_line_to_netlist(
     """
     circuit.raw_spice += new_line + os.linesep
     return circuit
+

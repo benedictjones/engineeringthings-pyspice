@@ -18,7 +18,10 @@ Finally, custom helper functions can be found in `utils/`.
 
 This repository is using Window for Subsytem Linux (WSL) on ubuntu, using conda.
 
-The conda enviroment can be found and installed from `conda_env.yml`.
+The conda enviroment can be found and installed from `conda_env.yml` using:
+```
+conda env create --file conda_env.yml
+```
 
 For this to work NGSpice is required.
 This is installed by defualt on many versions of linux, but might require some manual instilation on windows.
